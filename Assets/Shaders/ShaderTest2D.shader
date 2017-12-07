@@ -1,4 +1,4 @@
-﻿Shader "Custom/WhitePlainShader"
+﻿Shader "Custom/ShaderTest2D"
 {
 	Properties
 	{
@@ -13,8 +13,7 @@
 	    {
 	      "Queue" = "Transparent"
 	    }
-		// No culling or depth
-		//Cull Off ZWrite Off ZTest Always
+		
 
 		Pass
 		{
@@ -52,12 +51,18 @@
 
 			fixed4 frag (v2f i) : SV_Target
 			{
-				float4 color = tex2D(_MainTex,i.uv);
+			    //first texture
+				float4 color1 = tex2D(_MainTex,i.uv);
+				//second texture
 				float4 color2 = tex2D(_SecondTex,i.uv);
+				//e is for color changing based on the uv cord
 				float4 e = float4(i.uv.x,i.uv.g,0,1);
+				//c is for color tilting effect
 				float4 c = _Color.xyzw;
+				//d is for tween effect for sprite change
 				float4 d = _Tween.xxxx;
-				return (color *(1 - d)) + (color2 * d);
+
+				return (color1 *(1 - d)) + (color2 * d);
 			}
 			ENDCG
 		}
