@@ -18,6 +18,7 @@
 		Pass
 		{
 		    Blend SrcAlpha OneMinusSrcAlpha
+		  //  Blend One One
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -53,16 +54,31 @@
 			{
 			    //first texture
 				float4 color1 = tex2D(_MainTex,i.uv);
+
+				//create a 2*2 texture of the first one
+				float4 Dcolor1 = tex2D(_MainTex,i.uv*2);
+
 				//second texture
 				float4 color2 = tex2D(_SecondTex,i.uv);
+
+				//create a 2*2 texture of the second one
+				float4 Dcolor2 = tex2D(_SecondTex,i.uv*2);
+
+				//create a grey scale pic
+				float luminance = color1.r*0.3+color1.g*0.59+color1.b*0.11;
+				float4 color1grey = float4(luminance,luminance,luminance, color1.a);
+
 				//e is for color changing based on the uv cord
-				float4 e = float4(i.uv.x,i.uv.g,0,1);
+				float4 e = float4(i.uv.x,i.uv.g,1,1);
+
 				//c is for color tilting effect
 				float4 c = _Color.xyzw;
+
 				//d is for tween effect for sprite change
 				float4 d = _Tween.xxxx;
 
 				return (color1 *(1 - d)) + (color2 * d);
+				//return color1grey;
 			}
 			ENDCG
 		}
