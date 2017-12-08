@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnotherSpriteChange.cs" />
      <Compile Include="Assets\Scripts\SpriteChange.cs" />
+     <None Include="Assets\Shaders\DebugUV1.shader" />
      <None Include="Assets\Shaders\ShaderTest2D.shader" />
      <None Include="Assets\Shaders\ShaderTest3D.shader" />
  <Reference Include="UnityEngine.UI">

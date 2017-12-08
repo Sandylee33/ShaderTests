@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/WhitePlainShader.shader">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Shaders/WhiteShader.shader" Line="38" Column="47" />
-      <File FileName="Assets/Shaders/WhitePlainShader.shader" Line="45" Column="37" />
+      <File FileName="Assets/Shaders/ShaderTest3D.shader" Line="1" Column="1" />
+      <File FileName="Assets/Shaders/ShaderTest2D.shader" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AnotherSpriteChange.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SpriteChange.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
